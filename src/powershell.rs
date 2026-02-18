@@ -1,7 +1,7 @@
 use std::env;
 use std::fs;
-use zed_extension_api::{self as zed, Result};
 use zed_extension_api::settings::LspSettings;
+use zed_extension_api::{self as zed, Result};
 
 struct PowerShellExtension {
     /// The PowerShell binary, default to `pwsh`.
@@ -75,7 +75,6 @@ impl zed::Extension for PowerShellExtension {
         LspSettings::for_worktree(language_server_id.as_ref(), worktree)
             .map(|settings| settings.settings)
     }
-
 }
 
 impl PowerShellExtension {
@@ -151,4 +150,3 @@ impl PowerShellExtension {
 }
 
 zed::register_extension!(PowerShellExtension);
-
